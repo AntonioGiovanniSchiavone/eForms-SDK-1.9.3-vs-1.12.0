@@ -191,6 +191,8 @@
 							<cbc:ID schemeName="tender">TEN-0001</cbc:ID>
 							<!--"id": "BT-171-Tender",	"name": "Tender Rank"-->
 							<cbc:RankCode>3</cbc:RankCode>
+							<!--"id": "BT-682-Tender" -->
+							<efbc:ForeignSubsidiesMeasuresCode listName="foreign-subsidy-measure-conclusion">fsr-adm-clos</efbc:ForeignSubsidiesMeasuresCode>
 							<!--"id": "BT-1711-Tender",	"name": "Tender Ranked"-->
 							<efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
 							<!--"id": "BT-193-Tender","name": "Tender Variant",-->
@@ -219,7 +221,7 @@
 							</efac:TenderingParty>
 							<efac:TenderLot>
 								<!--"id": "BT-13714-Tender","name": "Tender Lot Identifier -->
-								<cbc:ID>GLO-0001</cbc:ID>
+								<cbc:ID schemeName="LotsGroup">GLO-0001</cbc:ID>
 							</efac:TenderLot>
 							<efac:TenderReference>
 								<!--"id": "BT-3201-Tender",	"name": "Tender Identifier", -->
@@ -234,6 +236,8 @@
 							<cbc:ID schemeName="tender">TEN-0002</cbc:ID>
 							<!--"id": "BT-171-Tender",	"name": "Tender Rank"-->
 							<cbc:RankCode>4</cbc:RankCode>
+							<!--"id": "BT-682-Tender" -->
+							<efbc:ForeignSubsidiesMeasuresCode listName="foreign-subsidy-measure-conclusion">fsr-no-obj</efbc:ForeignSubsidiesMeasuresCode>
 							<!--"id": "BT-1711-Tender",	"name": "Tender Ranked"-->
 							<efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
 							<!--"id": "BT-193-Tender","name": "Tender Variant",-->
@@ -319,7 +323,7 @@
 							<efbc:ContractFrameworkIndicator>true</efbc:ContractFrameworkIndicator>
 							<cac:NoticeDocumentReference>
 								<!--id": "OPT-100-Contract", "name": "Framework Notice Identifier"-->
-								<cbc:ID>12345678-2023</cbc:ID>
+								<cbc:ID schemeName="ojs-notice-id">12345678-2023</cbc:ID>
 							</cac:NoticeDocumentReference>
 							<cac:SignatoryParty>
 								<cac:PartyIdentification>
@@ -361,7 +365,7 @@
 							<efbc:ContractFrameworkIndicator>true</efbc:ContractFrameworkIndicator>
 							<cac:NoticeDocumentReference>
 								<!--id": "OPT-100-Contract", "name": "Framework Notice Identifier"-->
-								<cbc:ID>12345678-2023</cbc:ID>
+								<cbc:ID schemeName="ojs-notice-id">12345678-2023</cbc:ID>
 							</cac:NoticeDocumentReference>
 							<cac:SignatoryParty>
 								<cac:PartyIdentification>
@@ -1130,7 +1134,7 @@
 	</ext:UBLExtensions>
 	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
 	<!--   "id" : "OPT-002-notice","name" : "Customization ID (UBL)" -->
-	<cbc:CustomizationID>eforms-sdk-1.9</cbc:CustomizationID>
+	<cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
 	<!--     "id" : "BT-701-notice","name" : "Notice Identifier" -->
 	<cbc:ID schemeName="notice-id">15377ca1-6cf7-4060-90f0-9290128957a3</cbc:ID>
 	<!--"id" : "BT-04-notice", "name" : "Procedure Identifier"-->
@@ -1196,7 +1200,7 @@
 		<cac:LotDistribution>
 			<cac:LotsGroup>
 				<!--  "id" : "BT-330-Procedure", "name" : "Group Identifier" -->
-				<cbc:LotsGroupID>GLO-0001</cbc:LotsGroupID>
+				<cbc:LotsGroupID schemeName="LotsGroup">GLO-0001</cbc:LotsGroupID>
 				<cac:ProcurementProjectLotReference>
 					<!--  "id" : "BT-1375-Procedure", "name" : "Group Lot Identifier" -->
 					<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
@@ -1433,6 +1437,10 @@
 					</cac:PartyIdentification>
 				</cac:IssuerParty>
 			</cac:EmploymentLegislationDocumentReference>
+			<cac:ContractExecutionRequirement>
+				<!--"id" : "BT-681-Lot" -->
+				<cbc:ExecutionRequirementCode listName="fsr">true</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
 			<!-- LOT-0001 - Awarding criteria -->
 			<cac:AwardingTerms>
 				<cac:AwardingCriterion>
@@ -1545,7 +1553,7 @@
 			<cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
 			<cac:NoticeDocumentReference>
 				<!--id": "BT-125(i)-Lot", "name": "Previous Planning Identifier"-->
-				<cbc:ID>9c0fd704-64d3-4294-a3b6-6df45911ab9f-01</cbc:ID>
+				<cbc:ID schemeName="notice-id-ref">9c0fd704-64d3-4294-a3b6-6df45911ab9f-01</cbc:ID>
 				<!--id": "BT-1251-Lot",	"name": "Previous Planning Part Identifier"-->
 				<cbc:ReferencedDocumentInternalAddress>123</cbc:ReferencedDocumentInternalAddress>
 			</cac:NoticeDocumentReference>
@@ -1578,7 +1586,7 @@
 		<!-- LOT-0001 - Procurement project -->
 		<cac:ProcurementProject>
 			<!-- "id": "BT-22-Procedure","name": "Internal Identifier" -->
-			<cbc:ID schemeName="InternalID">Object Reference Number---</cbc:ID>
+			<cbc:ID schemeName="InternalID">Lot Reference A</cbc:ID>
 			<!-- "id": "BT-21-Procedure","name": "Title" -->
 			<cbc:Name languageID="ENG">Title ---</cbc:Name>
 			<!-- "id": "BT-24-Procedure","name": "Description" -->
@@ -1833,7 +1841,7 @@
 			<cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
 			<cac:NoticeDocumentReference>
 				<!--id": "BT-125(i)-Lot", "name": "Previous Planning Identifier"-->
-				<cbc:ID>9c0fd704-64d3-4294-a3b6-6df45911ab9f-01</cbc:ID>
+				<cbc:ID schemeName="notice-id-ref">9c0fd704-64d3-4294-a3b6-6df45911ab9f-01</cbc:ID>
 				<!--id": "BT-1251-Lot",	"name": "Previous Planning Part Identifier"-->
 				<cbc:ReferencedDocumentInternalAddress>123</cbc:ReferencedDocumentInternalAddress>
 			</cac:NoticeDocumentReference>
@@ -1865,7 +1873,7 @@
 		<!-- LOT-0002 - Procurement project -->
 		<cac:ProcurementProject>
 			<!-- "id": "BT-22-Lot","name": "Internal Identifier" -->
-			<cbc:ID schemeName="InternalID">Object Reference Number---</cbc:ID>
+			<cbc:ID schemeName="InternalID">Lot Reference B</cbc:ID>
 			<!-- "id": "BT-21-Lot","name": "Title" -->
 			<cbc:Name languageID="ENG">Title lot 2---</cbc:Name>
 			<!-- "id": "BT-24-Lot","name": "Description" -->

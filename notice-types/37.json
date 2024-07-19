@@ -1,9 +1,9 @@
 {
   "ublVersion" : "2.3",
-  "sdkVersion" : "1.9.0",
+  "sdkVersion" : "1.12.0",
   "metadataDatabase" : {
-    "version" : "1.9.1",
-    "createdOn" : "2023-09-20T11:33:23"
+    "version" : "1.12.0",
+    "createdOn" : "2024-06-11T11:53:25"
   },
   "noticeId" : "37",
   "metadata" : [ {
@@ -143,6 +143,7 @@
       "displayType" : "GROUP",
       "description" : "Contracting Party related Information (URL, Legal Type, Contracting Type, Activity, …)",
       "_label" : "group|name|ND-ContractingParty",
+      "businessEntityId" : "buyer",
       "_repeatable" : true,
       "content" : [ {
         "id" : "GR-ContractingAuthority-Buyer",
@@ -388,11 +389,10 @@
       }, {
         "id" : "GR-Procedure-PlaceOfPerformance",
         "contentType" : "group",
-        "nodeId" : "ND-ProcedurePlacePerformanceAdditionalInformation",
+        "nodeId" : "ND-ProcedurePlacePerformance",
         "displayType" : "GROUP",
-        "description" : "Additional Information about the location where the Procurement, for the Procedure as a whole, should take place",
-        "_label" : "group|name|ND-ProcedurePlacePerformanceAdditionalInformation",
-        "_repeatable" : true,
+        "description" : "A location where the Procurement, for the Procedure as a whole, should take place",
+        "_label" : "group|name|ND-ProcedurePlacePerformance",
         "content" : [ {
           "id" : "BT-5101(a)-Procedure",
           "contentType" : "field",
@@ -519,7 +519,8 @@
             "displayType" : "COMBOBOX",
             "description" : "Unpublished Identifier",
             "_label" : "field|name|BT-195(BT-88)-Procedure",
-            "_presetValue" : "pro-fea"
+            "_presetValue" : "pro-fea",
+            "hidden" : true
           }, {
             "id" : "BT-196(BT-88)-Procedure",
             "contentType" : "field",
@@ -562,7 +563,8 @@
             "displayType" : "COMBOBOX",
             "description" : "Unpublished Identifier",
             "_label" : "field|name|BT-195(BT-105)-Procedure",
-            "_presetValue" : "pro-typ"
+            "_presetValue" : "pro-typ",
+            "hidden" : true
           }, {
             "id" : "BT-196(BT-105)-Procedure",
             "contentType" : "field",
@@ -647,7 +649,9 @@
     "_label" : "group|name|ND-Lot",
     "_idScheme" : "LOT",
     "_schemeName" : "Lot",
+    "businessEntityId" : "lot",
     "_identifierFieldId" : "BT-137-Lot",
+    "_captionFieldId" : "BT-21-Lot",
     "_repeatable" : true,
     "content" : [ {
       "id" : "BT-137-Lot",
@@ -1112,7 +1116,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-539)-Lot",
-              "_presetValue" : "awa-cri-typ"
+              "_presetValue" : "awa-cri-typ",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-539)-Lot",
               "contentType" : "field",
@@ -1155,7 +1160,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-540)-Lot",
-              "_presetValue" : "awa-cri-des"
+              "_presetValue" : "awa-cri-des",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-540)-Lot",
               "contentType" : "field",
@@ -1212,7 +1218,8 @@
                   "displayType" : "COMBOBOX",
                   "description" : "Unpublished Identifier",
                   "_label" : "field|name|BT-195(BT-541)-Lot-Weight",
-                  "_presetValue" : "awa-cri-num"
+                  "_presetValue" : "awa-cri-num",
+                  "hidden" : true
                 }, {
                   "id" : "BT-196(BT-541)-Lot-Weight",
                   "contentType" : "field",
@@ -1255,7 +1262,8 @@
                   "displayType" : "COMBOBOX",
                   "description" : "Unpublished Identifier",
                   "_label" : "field|name|BT-195(BT-5421)-Lot",
-                  "_presetValue" : "awa-cri-wei"
+                  "_presetValue" : "awa-cri-wei",
+                  "hidden" : true
                 }, {
                   "id" : "BT-196(BT-5421)-Lot",
                   "contentType" : "field",
@@ -1306,7 +1314,8 @@
                   "displayType" : "COMBOBOX",
                   "description" : "Unpublished Identifier",
                   "_label" : "field|name|BT-195(BT-541)-Lot-Fixed",
-                  "_presetValue" : "awa-cri-num"
+                  "_presetValue" : "awa-cri-num",
+                  "hidden" : true
                 }, {
                   "id" : "BT-196(BT-541)-Lot-Fixed",
                   "contentType" : "field",
@@ -1349,7 +1358,8 @@
                   "displayType" : "COMBOBOX",
                   "description" : "Unpublished Identifier",
                   "_label" : "field|name|BT-195(BT-5422)-Lot",
-                  "_presetValue" : "awa-cri-fix"
+                  "_presetValue" : "awa-cri-fix",
+                  "hidden" : true
                 }, {
                   "id" : "BT-196(BT-5422)-Lot",
                   "contentType" : "field",
@@ -1401,7 +1411,8 @@
                   "displayType" : "COMBOBOX",
                   "description" : "Unpublished Identifier",
                   "_label" : "field|name|BT-195(BT-541)-Lot-Threshold",
-                  "_presetValue" : "awa-cri-num"
+                  "_presetValue" : "awa-cri-num",
+                  "hidden" : true
                 }, {
                   "id" : "BT-196(BT-541)-Lot-Threshold",
                   "contentType" : "field",
@@ -1444,7 +1455,8 @@
                   "displayType" : "COMBOBOX",
                   "description" : "Unpublished Identifier",
                   "_label" : "field|name|BT-195(BT-5423)-Lot",
-                  "_presetValue" : "awa-cri-thr"
+                  "_presetValue" : "awa-cri-thr",
+                  "hidden" : true
                 }, {
                   "id" : "BT-196(BT-5423)-Lot",
                   "contentType" : "field",
@@ -1489,7 +1501,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-734)-Lot",
-              "_presetValue" : "awa-cri-nam"
+              "_presetValue" : "awa-cri-nam",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-734)-Lot",
               "contentType" : "field",
@@ -1533,7 +1546,8 @@
             "displayType" : "COMBOBOX",
             "description" : "Unpublished Identifier",
             "_label" : "field|name|BT-195(BT-543)-Lot",
-            "_presetValue" : "awa-cri-com"
+            "_presetValue" : "awa-cri-com",
+            "hidden" : true
           }, {
             "id" : "BT-196(BT-543)-Lot",
             "contentType" : "field",
@@ -1576,7 +1590,8 @@
             "displayType" : "COMBOBOX",
             "description" : "Unpublished Identifier",
             "_label" : "field|name|BT-195(BT-733)-Lot",
-            "_presetValue" : "awa-cri-ord"
+            "_presetValue" : "awa-cri-ord",
+            "hidden" : true
           }, {
             "id" : "BT-196(BT-733)-Lot",
             "contentType" : "field",
@@ -1596,6 +1611,20 @@
             "description" : "Unpublished Access Date",
             "_label" : "field|name|BT-198(BT-733)-Lot"
           } ]
+        } ]
+      }, {
+        "id" : "GR-FSR",
+        "contentType" : "group",
+        "nodeId" : "ND-FSR",
+        "displayType" : "GROUP",
+        "description" : "Applicability of the Foreign Subsidies Regulation",
+        "_label" : "group|name|ND-FSR",
+        "content" : [ {
+          "id" : "BT-681-Lot",
+          "contentType" : "field",
+          "displayType" : "COMBOBOX",
+          "description" : "Foreign Subsidies Regulation",
+          "_label" : "field|name|BT-681-Lot"
         } ]
       } ]
     }, {
@@ -1708,8 +1737,7 @@
           "_idSchemes" : [ "ORG", "TPO" ]
         } ]
       } ]
-    } ],
-    "_captionFieldId" : "BT-21-Lot"
+    } ]
   }, {
     "id" : "GR-LotsGroup",
     "contentType" : "group",
@@ -1719,7 +1747,9 @@
     "_label" : "group|name|ND-LotsGroup",
     "_idScheme" : "GLO",
     "_schemeName" : "LotsGroup",
+    "businessEntityId" : "groupOfLots",
     "_identifierFieldId" : "BT-137-LotsGroup",
+    "_captionFieldId" : "BT-21-LotsGroup",
     "_repeatable" : true,
     "content" : [ {
       "id" : "GR-LotsGroup-Purpose",
@@ -1819,7 +1849,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-539)-LotsGroup",
-              "_presetValue" : "awa-cri-typ"
+              "_presetValue" : "awa-cri-typ",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-539)-LotsGroup",
               "contentType" : "field",
@@ -1862,7 +1893,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-540)-LotsGroup",
-              "_presetValue" : "awa-cri-des"
+              "_presetValue" : "awa-cri-des",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-540)-LotsGroup",
               "contentType" : "field",
@@ -1919,7 +1951,8 @@
                   "displayType" : "COMBOBOX",
                   "description" : "Unpublished Identifier",
                   "_label" : "field|name|BT-195(BT-541)-LotsGroup-Weight",
-                  "_presetValue" : "awa-cri-num"
+                  "_presetValue" : "awa-cri-num",
+                  "hidden" : true
                 }, {
                   "id" : "BT-196(BT-541)-LotsGroup-Weight",
                   "contentType" : "field",
@@ -1962,7 +1995,8 @@
                   "displayType" : "COMBOBOX",
                   "description" : "Unpublished Identifier",
                   "_label" : "field|name|BT-195(BT-5421)-LotsGroup",
-                  "_presetValue" : "awa-cri-wei"
+                  "_presetValue" : "awa-cri-wei",
+                  "hidden" : true
                 }, {
                   "id" : "BT-196(BT-5421)-LotsGroup",
                   "contentType" : "field",
@@ -2013,7 +2047,8 @@
                   "displayType" : "COMBOBOX",
                   "description" : "Unpublished Identifier",
                   "_label" : "field|name|BT-195(BT-541)-LotsGroup-Fixed",
-                  "_presetValue" : "awa-cri-num"
+                  "_presetValue" : "awa-cri-num",
+                  "hidden" : true
                 }, {
                   "id" : "BT-196(BT-541)-LotsGroup-Fixed",
                   "contentType" : "field",
@@ -2056,7 +2091,8 @@
                   "displayType" : "COMBOBOX",
                   "description" : "Unpublished Identifier",
                   "_label" : "field|name|BT-195(BT-5422)-LotsGroup",
-                  "_presetValue" : "awa-cri-fix"
+                  "_presetValue" : "awa-cri-fix",
+                  "hidden" : true
                 }, {
                   "id" : "BT-196(BT-5422)-LotsGroup",
                   "contentType" : "field",
@@ -2108,7 +2144,8 @@
                   "displayType" : "COMBOBOX",
                   "description" : "Unpublished Identifier",
                   "_label" : "field|name|BT-195(BT-541)-LotsGroup-Threshold",
-                  "_presetValue" : "awa-cri-num"
+                  "_presetValue" : "awa-cri-num",
+                  "hidden" : true
                 }, {
                   "id" : "BT-196(BT-541)-LotsGroup-Threshold",
                   "contentType" : "field",
@@ -2151,7 +2188,8 @@
                   "displayType" : "COMBOBOX",
                   "description" : "Unpublished Identifier",
                   "_label" : "field|name|BT-195(BT-5423)-LotsGroup",
-                  "_presetValue" : "awa-cri-thr"
+                  "_presetValue" : "awa-cri-thr",
+                  "hidden" : true
                 }, {
                   "id" : "BT-196(BT-5423)-LotsGroup",
                   "contentType" : "field",
@@ -2196,7 +2234,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-734)-LotsGroup",
-              "_presetValue" : "awa-cri-nam"
+              "_presetValue" : "awa-cri-nam",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-734)-LotsGroup",
               "contentType" : "field",
@@ -2240,7 +2279,8 @@
             "displayType" : "COMBOBOX",
             "description" : "Unpublished Identifier",
             "_label" : "field|name|BT-195(BT-543)-LotsGroup",
-            "_presetValue" : "awa-cri-com"
+            "_presetValue" : "awa-cri-com",
+            "hidden" : true
           }, {
             "id" : "BT-196(BT-543)-LotsGroup",
             "contentType" : "field",
@@ -2283,7 +2323,8 @@
             "displayType" : "COMBOBOX",
             "description" : "Unpublished Identifier",
             "_label" : "field|name|BT-195(BT-733)-LotsGroup",
-            "_presetValue" : "awa-cri-ord"
+            "_presetValue" : "awa-cri-ord",
+            "hidden" : true
           }, {
             "id" : "BT-196(BT-733)-LotsGroup",
             "contentType" : "field",
@@ -2305,8 +2346,7 @@
           } ]
         } ]
       } ]
-    } ],
-    "_captionFieldId" : "BT-21-LotsGroup"
+    } ]
   }, {
     "id" : "GR-Result",
     "contentType" : "group",
@@ -2329,7 +2369,9 @@
         "_label" : "group|name|ND-TenderingParty",
         "_idScheme" : "TPA",
         "_schemeName" : "tendering-party",
+        "businessEntityId" : "tenderingParty",
         "_identifierFieldId" : "OPT-210-Tenderer",
+        "_captionFieldId" : "OPT-211-Tenderer",
         "_repeatable" : true,
         "content" : [ {
           "id" : "OPT-210-Tenderer",
@@ -2417,7 +2459,9 @@
         "_label" : "group|name|ND-SettledContract",
         "_idScheme" : "CON",
         "_schemeName" : "contract",
+        "businessEntityId" : "contract",
         "_identifierFieldId" : "OPT-316-Contract",
+        "_captionFieldId" : "BT-150-Contract",
         "_repeatable" : true,
         "content" : [ {
           "id" : "GR-SettledContract-1",
@@ -2518,8 +2562,7 @@
             "description" : "Contract EU Funds Details",
             "_label" : "field|name|BT-6110-Contract"
           } ]
-        } ],
-        "_captionFieldId" : "BT-150-Contract"
+        } ]
       } ]
     }, {
       "id" : "GR-LotTender-Section",
@@ -2536,7 +2579,9 @@
         "_label" : "group|name|ND-LotTender",
         "_idScheme" : "TEN",
         "_schemeName" : "tender",
+        "businessEntityId" : "tender",
         "_identifierFieldId" : "OPT-321-Tender",
+        "_captionFieldId" : "BT-3201-Tender",
         "_repeatable" : true,
         "content" : [ {
           "id" : "GR-Tender",
@@ -2588,7 +2633,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-171)-Tender",
-              "_presetValue" : "ten-ran"
+              "_presetValue" : "ten-ran",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-171)-Tender",
               "contentType" : "field",
@@ -2631,7 +2677,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-193)-Tender",
-              "_presetValue" : "win-ten-var"
+              "_presetValue" : "win-ten-var",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-193)-Tender",
               "contentType" : "field",
@@ -2673,8 +2720,20 @@
             "_label" : "field|name|OPT-310-Tender",
             "_idSchemes" : [ "TPA" ]
           } ]
-        } ],
-        "_captionFieldId" : "BT-3201-Tender"
+        }, {
+          "id" : "GR-FSR-Measures",
+          "contentType" : "group",
+          "displayType" : "GROUP",
+          "description" : "Tender Foreign Subsidies Regulation Measures",
+          "_label" : "group|name|GR-FSR-Measures",
+          "content" : [ {
+            "id" : "BT-682-Tender",
+            "contentType" : "field",
+            "displayType" : "COMBOBOX",
+            "description" : "Foreign Subsidies Measures",
+            "_label" : "field|name|BT-682-Tender"
+          } ]
+        } ]
       } ]
     }, {
       "id" : "GR-LotResult-Section",
@@ -2691,7 +2750,9 @@
         "_label" : "group|name|ND-LotResult",
         "_idScheme" : "RES",
         "_schemeName" : "result",
+        "businessEntityId" : "resultForLot",
         "_identifierFieldId" : "OPT-322-LotResult",
+        "_captionFieldId" : "BT-13713-LotResult",
         "_repeatable" : true,
         "content" : [ {
           "id" : "OPT-322-LotResult",
@@ -2731,7 +2792,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-142)-LotResult",
-              "_presetValue" : "win-cho"
+              "_presetValue" : "win-cho",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-142)-LotResult",
               "contentType" : "field",
@@ -2774,7 +2836,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-144)-LotResult",
-              "_presetValue" : "no-awa-rea"
+              "_presetValue" : "no-awa-rea",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-144)-LotResult",
               "contentType" : "field",
@@ -2911,7 +2974,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-636)-LotResult",
-              "_presetValue" : "buy-rev-typ"
+              "_presetValue" : "buy-rev-typ",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-636)-LotResult",
               "contentType" : "field",
@@ -2954,7 +3018,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-635)-LotResult",
-              "_presetValue" : "buy-rev-cou"
+              "_presetValue" : "buy-rev-cou",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-635)-LotResult",
               "contentType" : "field",
@@ -3026,7 +3091,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-760)-LotResult",
-              "_presetValue" : "rec-sub-typ"
+              "_presetValue" : "rec-sub-typ",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-760)-LotResult",
               "contentType" : "field",
@@ -3069,7 +3135,8 @@
               "displayType" : "COMBOBOX",
               "description" : "Unpublished Identifier",
               "_label" : "field|name|BT-195(BT-759)-LotResult",
-              "_presetValue" : "rec-sub-cou"
+              "_presetValue" : "rec-sub-cou",
+              "hidden" : true
             }, {
               "id" : "BT-196(BT-759)-LotResult",
               "contentType" : "field",
@@ -3090,8 +3157,7 @@
               "_label" : "field|name|BT-198(BT-759)-LotResult"
             } ]
           } ]
-        } ],
-        "_captionFieldId" : "BT-13713-LotResult"
+        } ]
       } ]
     } ]
   }, {
@@ -3141,7 +3207,8 @@
           "contentType" : "field",
           "displayType" : "TEXTBOX",
           "description" : "Change Previous Section Identifier",
-          "_label" : "field|name|BT-13716-notice"
+          "_label" : "field|name|BT-13716-notice",
+          "_idSchemes" : [ "CON", "GLO", "LOT", "ORG", "PAR", "RES", "TEN", "TPA", "TPO", "UBO" ]
         } ]
       }, {
         "id" : "BT-141(a)-notice",
@@ -3184,7 +3251,9 @@
         "_label" : "group|name|ND-Organization",
         "_idScheme" : "ORG",
         "_schemeName" : "organization",
+        "businessEntityId" : "organization",
         "_identifierFieldId" : "OPT-200-Organization-Company",
+        "_captionFieldId" : "BT-500-Organization-Company",
         "_repeatable" : true,
         "content" : [ {
           "id" : "OPT-200-Organization-Company",
@@ -3396,8 +3465,11 @@
           "_label" : "group|name|ND-Touchpoint",
           "_idScheme" : "TPO",
           "_schemeName" : "touchpoint",
+          "businessEntityId" : "touchpoint",
           "_identifierFieldId" : "OPT-201-Organization-TouchPoint",
+          "_captionFieldId" : "BT-500-Organization-TouchPoint",
           "_repeatable" : true,
+          "collapsed" : true,
           "content" : [ {
             "id" : "OPT-201-Organization-TouchPoint",
             "contentType" : "field",
@@ -3511,10 +3583,8 @@
               "description" : "Contact Fax",
               "_label" : "field|name|BT-739-Organization-TouchPoint"
             } ]
-          } ],
-          "_captionFieldId" : "BT-500-Organization-TouchPoint"
-        } ],
-        "_captionFieldId" : "BT-500-Organization-Company"
+          } ]
+        } ]
       } ]
     }, {
       "id" : "GR-UBO-Subsection",
@@ -3531,7 +3601,9 @@
         "_label" : "group|name|ND-UBO",
         "_idScheme" : "UBO",
         "_schemeName" : "ubo",
+        "businessEntityId" : "ultimateBeneficialOwner",
         "_identifierFieldId" : "OPT-202-UBO",
+        "_captionFieldId" : "BT-500-UBO",
         "_repeatable" : true,
         "content" : [ {
           "id" : "OPT-202-UBO",
@@ -3629,8 +3701,7 @@
             "description" : "Winner Owner Nationality",
             "_label" : "field|name|BT-706-UBO"
           } ]
-        } ],
-        "_captionFieldId" : "BT-500-UBO"
+        } ]
       } ]
     } ]
   } ]
